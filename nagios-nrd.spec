@@ -1,18 +1,19 @@
 # TODO
 # - subpackages for client/server
+%define		rel		0.1
+%define		svnrev	113
 %include	/usr/lib/rpm/macros.perl
 Summary:	Nagios Result Distributor (NSCA protocol redefined)
 Name:		nagios-nrd
 Version:	0.1
-Release:	0.1
+Release:	0.svn%{svnrev}.%{rel}
 License:	GPL v3
 Group:		Networking
-Source0:	nrd.tar.xz
-# Source0-md5:	71d3d4b105283cc1e7e3ab5d83e6a1e2
+Source0:	nrd-r%{svnrev}.tar.bz2
+# Source0-md5:	f8056063723f623aec110ae3eeedd968
+Source1:	get-source.sh
 URL:		https://code.google.com/p/nrd/
-BuildRequires:	perl-Module-Install
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	xz
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -20,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 nsca2
 
 %prep
-%setup -q -n nrd
+%setup -q -n nrd-r%{svnrev}
 
 %build
 %{__perl} Makefile.PL \
