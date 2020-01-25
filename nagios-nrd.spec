@@ -2,7 +2,6 @@
 # - subpackages for client/server
 %define		rel		0.1
 %define		svnrev	113
-%include	/usr/lib/rpm/macros.perl
 Summary:	Nagios Result Distributor (NSCA protocol redefined)
 Name:		nagios-nrd
 Version:	0.1
